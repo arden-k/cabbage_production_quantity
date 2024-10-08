@@ -133,6 +133,8 @@
         })
         .text((d) => d.des); // 각 삼각형마다 다른 텍스트를 표시
 
+      let zoomCount = 0; // 줌인/줌아웃 횟수를 저장하는 변수
+
       // 카메라 이동 및 줌인/줌아웃 애니메이션
       function cameraTransition(index) {
         const triangle = data[index];
@@ -144,16 +146,6 @@
         // 삼각형 높이를 계산
         const triangleHeight = getHeight(triangle.size);
 
-        // 삼각형 꼭대기 좌표를 기준으로 viewBox 설정
-        // svg
-        //   .transition()
-        //   .duration(zoomDuration)
-        //   .attr(
-        //     "viewBox",
-        //     `${triangle.x - (viewBoxWidth * zoomFactor) / 2} ${
-        //       triangle.y - triangleHeight / 2 - (viewBoxHeight * zoomFactor) / 2
-        //     } ${viewBoxWidth * zoomFactor} ${viewBoxHeight * zoomFactor}`
-        //   )
         svg
           .transition()
           .duration(zoomDuration)
@@ -181,16 +173,19 @@
               .duration(zoomDuration)
               .attr("viewBox", "0 0 700 700")
               .on("end", function () {
-                // 다음 삼각형으로 카메라 이동
-                if (index < data.length - 1) {
-                  cameraTransition(index + 1);
+                if (zoomCount < data.length - 1) {
+                  zoomCount++;
+                  // 다음 삼각형으로 카메라 이동
+                  if (index < data.length - 1) {
+                    cameraTransition(index + 1);
+                  } else cameraTransition(0);
                 }
               });
           });
       }
 
       // 첫 번째 삼각형부터 카메라 이동 시작
-      cameraTransition(0);
+      cameraTransition(1);
     </script>
   </body>
 </html>
