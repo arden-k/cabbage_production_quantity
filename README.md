@@ -1,2 +1,2 @@
-# cabbage
+# CABBAGE_PRODUCTION_QUANTITY
 데이터 시각화 과제
