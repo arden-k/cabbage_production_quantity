@@ -7,58 +7,68 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+      /* 전체 */
+      * {
+        font-family: "Open Sans";
+      }
       svg {
         background-color: #fff;
       }
       h1 {
         margin-left: 20px;
         margin-bottom: -5px;
-        font-family: "Open Sans";
-        color: #d14215;
+        color: #eb6548;
+      }
+      p {
+        margin-left: 20px;
+        margin-top: 5px;
+        color: #eb6548;
+        font-size: 20px;
       }
     </style>
   </head>
   <body>
     <h1>김치위기? 기후위기!</h1>
+    <p>1980년대와 2010년대 평균 배추 생산량</p>
     <svg width="700" height="700"></svg>
     <script>
       // 샘플 데이터
       const data = [
         {
           size: 195298 / 10000,
-          color: "#D14215",
+          color: "#EB6548",
           x: 104 + 30,
           y: 399.5,
           label: "195,298 톤",
           des: "2010년대 고랭지 배추 평균 생산량",
-          textColor: "#D14215",
+          textColor: "#EB6548",
         },
         {
           size: 3027787 / 10000,
-          color: "#8AC032",
+          color: "#6B9A6E",
           x: 265 + 30,
           y: 260,
           label: "3,027,787 톤",
           des: "1980년대 배추 평균 생산량",
-          textColor: "#8AC032",
+          textColor: "#6B9A6E",
         },
         {
           size: 2243967 / 10000,
-          color: "#D14215",
+          color: "#EB6548",
           x: 415 + 30,
           y: 488.3,
           label: "2,243,967 톤",
           des: "2010년대 배추 평균 생산량",
-          textColor: "#D14215",
+          textColor: "#EB6548",
         },
         {
           size: 322061 / 10000,
-          color: "#8AC032",
+          color: "#6B9A6E",
           x: 543 + 30,
           y: 377.5,
           label: "322,061 톤",
           des: "1990년대 고랭지 배추 평균 생산량",
-          textColor: "#8AC032",
+          textColor: "#6B9A6E",
         },
       ];
 
